@@ -1,0 +1,26 @@
+# image size to crop/pad to (must be in multiples of 48)
+resize_x: 192
+resize_y: 192
+resize_z: 192
+
+# patch size
+patch_x: 96
+patch_y: 96
+patch_z: 96
+
+# tumor matching thresholds for outputs to labels
+outputs_distance_threshold: 2.
+outputs_ior_threshold: .5
+
+# tumor matching thresholds for prev labels to current labels
+prev_distance_threshold: 1.
+prev_ior_threshold: .1
+
+# whether unique tumors will be represented as a onehot-encoded matrix
+onehot_tumors: false
+
+# whether to keep the false positive tumors
+keep_fp: true
+
+image_modalities: ['T1_pre', 'T1_post', 'T2', 'FLAIR']
+registration_sequence: 'T1_post'

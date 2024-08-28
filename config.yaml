@@ -1,0 +1,83 @@
+random_seed: 42
+val_interval: 5
+
+# argparse defaults
+model: "unet"
+dataset: "nyumets"
+epochs: 150
+lr: 0.0001
+batch_size: 1
+ckpt_dir: ./checkpoints/
+always_calculate_extended_metrics: false
+use_wandb: true
+buffer_size: 1
+sequence_limit: 8
+use_patches: true
+spatial_augmentation: false
+intensity_augmentation: false
+use_sliding_window_inferer: false
+loss_function: 'dice'
+image_modalities: ['T1_pre', 'T1_post_all', 'T2', 'FLAIR']
+
+accelerator: gpu
+devices: 1
+
+# data defaults
+nyumets:
+  dir: ""
+  img_metadata_csv: ""
+  split_csv: ""
+
+brats21:
+  dir: ""
+  split_csv: ""
+
+stanford:
+  dir: ""
+
+in_channels: 3 
+# for longitudinal evaluation metrics
+registration_sequence: 'T1_post_all'
+
+# transforms defaults
+### image size to crop/pad to (must be in multiples of 48)
+resize_x: 192
+resize_y: 192
+resize_z: 192
+
+# patch size
+patch_x: 96
+patch_y: 96
+patch_z: 96
+
+# sliding window inferer roi size
+inferer_roi_x: 96
+inferer_roi_y: 96
+inferer_roi_z: 96
+
+### tumor matching thresholds for outputs to labels
+outputs_distance_threshold: 10.
+outputs_ior_threshold: .2
+
+### tumor matching thresholds for prev labels to current labels
+prev_distance_threshold: 1.
+prev_ior_threshold: .1
+
+### whether unique tumors will be represented as a onehot-encoded matrix
+onehot_tumors: false
+
+### whether to keep the false positive tumors
+keep_fp: true
+
+
+# metrics defaults
+### volume to define small tumor
+small_tumor_vol_threshold: 3.
+
+### value of beta for Fbeta score
+beta: 1.
+
+### whether the tumors are onehot (for metrics)
+### TODO: combine with above
+is_onehot: false
+

@@ -1,0 +1,20 @@
+name: nyumets
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - pandas
+  - cudatoolkit=11.1
+  - torchaudio
+  - torchvision
+  - pytorch
+  - notebook
+  - ipykernel
+  - tqdm
+  - wandb
+  - simpleitk
+  - ipywidgets
+  - pyyaml
+  - nipype
+  - pip:
+    - monai==0.8.1

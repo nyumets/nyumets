@@ -1,0 +1,11 @@
+nyumets:
+  dir: "/gpfs/data/oermannlab/private_data/NYUMets/nyumets-open-data/data"
+  img_metadata_csv: "/gpfs/data/oermannlab/private_data/NYUMets/nyumets-open-data/metadata/20220915_imaging.csv"
+  split_csv: "/gpfs/data/oermannlab/private_data/NYUMets/nyumets-open-data/metadata/20220822_traintestsplits.csv"
+
+brats21:
+  dir: "/gpfs/data/oermannlab/public_data/BraTS_2021/RSNA_ASNR_MICCAI_BraTS2021_TrainingData_16July2021"
+  split_csv: "/gpfs/data/oermannlab/public_data/BraTS_2021/RSNA_ASNR_MICCAI_BraTS2021_TrainingData_16July2021/img_train_test_val_split.csv"
+
+stanford:
+  dir: "/gpfs/data/oermannlab/public_data/brainmetshare-2/"
